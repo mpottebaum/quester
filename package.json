@@ -1,0 +1,42 @@
+{
+  "name": "quester",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "lint": "eslint \"src/**/*.{ts,tsx,astro}\"",
+    "format:check": "prettier ./src --check",
+    "format:write": "prettier ./src --write",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prepare": "husky install"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.3",
+    "astro": "^4.0.6",
+    "typescript": "^5.3.3"
+  },
+  "devDependencies": {
+    "@typescript-eslint/parser": "^6.14.0",
+    "@vitest/coverage-v8": "^1.0.4",
+    "@vitest/ui": "^1.0.4",
+    "eslint": "^8.56.0",
+    "eslint-plugin-astro": "^0.31.0",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "husky": "^8.0.0",
+    "install": "^0.13.0",
+    "jsdom": "^23.0.1",
+    "npm": "^10.2.5",
+    "prettier": "^3.1.1",
+    "prettier-plugin-astro": "^0.12.2",
+    "vitest": "^1.0.4"
+  },
+  "engines": {
+    "node": ">=18.17.0"
+  }
+}
