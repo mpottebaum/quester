@@ -1,6 +1,6 @@
 ---
-import Layout from '../layouts/Layout.astro'
-import Button from '../components/Button.astro'
+import Layout from '~/layouts/Layout.astro'
+import Button from '~/components/Button.astro'
 ---
 
 <Layout title="Quizzard">
@@ -32,7 +32,6 @@ import Button from '../components/Button.astro'
     padding: 1rem;
     width: 100%;
     max-width: calc(100% - 2rem);
-    color: var(--theme-white);
     font-size: 2rem;
   }
 
@@ -55,6 +54,7 @@ import Button from '../components/Button.astro'
   h1 {
     font-size: 4rem;
     padding-bottom: 1rem;
+    color: var(--theme-primary);
   }
 
   a {

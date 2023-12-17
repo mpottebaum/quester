@@ -25,9 +25,9 @@ const { title } = Astro.props
   :root {
     --theme-black: #010b14;
     --theme-white: #fdfffcff;
-    --theme-primary: #ff0022ff;
-    --theme-secondary: #41ead4ff;
-    --theme-tertiary: #b91372ff;
+    --theme-primary: #41ead4ff;
+    --theme-secondary: #b91372ff;
+    --theme-tertiary: #ff0022ff;
   }
 
   * {
@@ -36,6 +36,7 @@ const { title } = Astro.props
   html {
     font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 16px;
+    color: var(--theme-white);
     background: var(--theme-black);
   }
 </style>
