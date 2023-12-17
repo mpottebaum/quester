@@ -1,3 +1,5 @@
+import type { Question } from '~/types'
+
 export function spawnRounds(questions: Question[], numRounds: number) {
   const rounds: Question[][] = []
   let iQs = 0

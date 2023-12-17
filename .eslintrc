@@ -11,5 +11,9 @@
         "extraFileExtensions": [".astro"]
       }
     }
+  ],
+  "ignorePatterns": [
+    "*.mjs",
+    "*.js"
   ]
 }
