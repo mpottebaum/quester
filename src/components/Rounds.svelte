@@ -8,14 +8,13 @@
 <ol class="rounds">
   {#each reversedRounds as round, i}
     <li class="round">
-      <h2>Round {reversedRounds.length - i}</h2>
       <ol>
         {#each round as question}
           <li>
             <a
               href={reversedRounds.length - i > currentRound
                 ? ''
-                : `/play/question/${question.id}`}
+                : `/play/questions/${question.id}`}
             >
               <button disabled={reversedRounds.length - i > currentRound}>
                 <p>{question.category}</p>
@@ -72,5 +71,10 @@
 
   button:hover {
     opacity: 80%;
+  }
+
+  button:disabled {
+    cursor: default;
+    opacity: 20%;
   }
 </style>
