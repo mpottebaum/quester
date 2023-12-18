@@ -1,8 +1,8 @@
 <script lang="ts">
   import type { Question } from '~/types'
-  export let rounds: Question[][];
+  export let rounds: Question[][]
   $: reversedRounds = [...rounds].reverse()
-  let currentRound = 1;
+  let currentRound = 1
 </script>
 
 <ol class="rounds">
@@ -13,8 +13,10 @@
         {#each round as question}
           <li>
             <a
-              href={reversedRounds.length - i > currentRound ? '' : `/play/question/${question.id}`
-            }>
+              href={reversedRounds.length - i > currentRound
+                ? ''
+                : `/play/question/${question.id}`}
+            >
               <button disabled={reversedRounds.length - i > currentRound}>
                 <p>{question.category}</p>
               </button>
@@ -53,7 +55,6 @@
     align-items: center;
     justify-content: space-around;
   }
-
 
   button {
     display: flex;
