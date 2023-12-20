@@ -1,7 +1,9 @@
 /// <reference types="vitest" />
+import { svelte } from '@sveltejs/vite-plugin-svelte'
 import { getViteConfig } from 'astro/config'
 
 export default getViteConfig({
+  plugins: [svelte()],
   test: {
     globals: true,
     environment: 'jsdom',
