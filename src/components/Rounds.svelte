@@ -1,25 +1,22 @@
 <script lang="ts">
   import type { Question } from '~/types'
   export let rounds: Question[][]
-  $: reversedRounds = [...rounds].reverse()
-  let currentRound = 1
+  export let currentRound = 1
+  export let onCategoryClick: (q: Question) => void
 </script>
 
 <ol class="rounds">
-  {#each reversedRounds as round, i}
+  {#each rounds as round, i}
     <li class="round">
       <ol>
         {#each round as question}
           <li>
-            <a
-              href={reversedRounds.length - i > currentRound
-                ? ''
-                : `/play/questions/${question.id}`}
+            <button
+              on:click={() => onCategoryClick(question)}
+              disabled={i + 1 > currentRound}
             >
-              <button disabled={reversedRounds.length - i > currentRound}>
-                <p>{question.category}</p>
-              </button>
-            </a>
+              <p>{question.category}</p>
+            </button>
           </li>
         {/each}
       </ol>

@@ -2,14 +2,14 @@
 import Layout from '~/layouts/Layout.astro'
 import questions from '~/mock-data/questions.json'
 import { spawnRounds } from '~/utils/spawn-rounds'
-import Rounds from '~/components/Rounds.svelte'
+import Game from '~/components/Game.svelte'
 
 const rounds = spawnRounds(questions, 5)
 ---
 
 <Layout title="Quizzard - Play">
   <main>
-    <Rounds client:only="svelte" rounds={rounds} />
+    <Game client:only="svelte" rounds={rounds} />
   </main>
 </Layout>
 
