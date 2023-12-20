@@ -1,7 +1,10 @@
 {
   "extends": [
-    "plugin:astro/recommended"
+    "plugin:astro/recommended",
+    "plugin:@typescript-eslint/recommended"
   ],
+  "parser": "@typescript-eslint/parser",
+  "plugins": ["@typescript-eslint"], 
   "overrides": [
     {
       "files": ["*.astro"],
@@ -11,5 +14,8 @@
         "extraFileExtensions": [".astro"]
       }
     }
-  ]
+  ],
+  "rules": {
+    "@typescript-eslint/triple-slash-reference": "off"
+  }
 }
