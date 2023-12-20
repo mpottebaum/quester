@@ -1,0 +1,28 @@
+---
+import type { Question } from '~/types'
+import Layout from '~/layouts/Layout.astro'
+import questions from '~/mock-data/questions.json'
+const { id: idStr } = Astro.params
+const id = parseInt(idStr ?? '')
+const question = questions.find((q) => q.id === id) as Question
+const answerIndex = Math.floor(Math.random() * 4)
+const choices: string[] = [
+  ...question.wrong_answers.slice(0, answerIndex),
+  question.answer,
+  ...question.wrong_answers.slice(answerIndex, 4),
+]
+---
+
+<Layout title="Quizzard - Category">
+  <p>{question.question}</p>
+  <ul>
+    {choices.map((choice) => <button>{choice}</button>)}
+  </ul>
+</Layout>
+
+<style>
+  ul {
+    display: flex;
+    flex-direction: column;
+  }
+</style>
